@@ -346,7 +346,7 @@ On Day 8 to last_day of Jan 2021, each $1 spent is 10 points and sushi is 2x poi
 Answer:
 customer_id	Points
 A	        1370
-B			940
+B		940
 Total points for Customer A is 1,370.
 Total points for Customer B is 820.
 */
