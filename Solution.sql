@@ -84,9 +84,9 @@ Use JOIN to merge sales and menu tables as customer_id and price are from both t
 
 Answer:
 customer_id	total_sales
-A				76
-B				74
-C				36
+A		  76
+B		  74
+C		  36
 
 Customer A spent $76.
 Customer B spent $74.
@@ -102,13 +102,13 @@ GROUP BY customer_id
 /*
 Steps:
 Use DISTINCT and wrap with COUNT to find out the visit_count for each customer.
-If we do not use DISTINCT on order_date, the number of days may be repeated. For example, if Customer A visited the restaurant twice on '2021–01–07', then number of days is counted as 2 days instead of 1 day.
+If we do not use DISTINCT on order_date, the number of days may be repeated. For example, if Customer A visited the restaurant twice on '2021â€“01â€“07', then number of days is counted as 2 days instead of 1 day.
 
 Answer:
 customer_id	visit_count
-	A 		 4
-	B		 6
-	C		 2
+	A 	 4
+	B	 6
+	C	 2
 
 Customer A visited 4 times.
 Customer B visited 6 times.
@@ -133,10 +133,10 @@ Steps:
 
  Answer:
  customer_id	order_date	product_name
-	A			2021-01-01	curry
-	A			2021-01-01	sushi
-	B			2021-01-01	curry
-	C			2021-01-01	ramen
+	A	2021-01-01	curry
+	A	2021-01-01	sushi
+	B	2021-01-01	curry
+	C	2021-01-01	ramen
 
 Customer A's first orders are curry and sushi.
 Customer B's first order is curry.
@@ -158,7 +158,7 @@ Then, use TOP 1 to filter highest number of purchased item.
 
 Answer:
 product_name	most_purchased
-ramen			8
+ramen		8
 
 Most purchased item on the menu is ramen which is 8 times. 
 */
@@ -185,11 +185,11 @@ Generate results where product rank = 1 only as the most popular product for eac
 
 Answer:
 customer_id	product_name	order_count
-A			ramen				3
-B			sushi				2
-B			curry				2
-B			ramen				2
-C			ramen				3
+A		ramen		3
+B		sushi		2
+B		curry		2
+B		ramen		2
+C		ramen		3
 
 Customer A and C's favourite item is ramen.
 Customer B enjoys all items on the menu.
@@ -218,8 +218,8 @@ Then, filter table by rank = 1 to show 1st item purchased by each customer.
 
 Answer:
 customer_id	  product_name
-A			   curry
-B			   sushi
+A		   curry
+B		   sushi
 
 Customer A's first order as member is curry.
 Customer B's first order as member is sushi.
@@ -247,11 +247,11 @@ Create a result to create new column rank by using Windows function and partitio
 Filter order_date before join_date.
 
 Answer:
-customer_id		product_name
-A				sushi
-A				curry
-B				sushi
-Customer A’s last order before becoming a member is sushi and curry.
+customer_id	product_name
+A		sushi
+A		curry
+B		sushi
+Customer Aâ€™s last order before becoming a member is sushi and curry.
 Whereas for Customer B, it's sushi.
 
 */
@@ -272,8 +272,8 @@ Filter order_date before join_date and perform a COUNT DISTINCT on product_id an
 
 Answer:
 customer_id	Total_Items	Amount_Spent
-A			2			25
-B			2			40
+A		2		25
+B		2		40
 
 Before becoming members,
 
@@ -281,7 +281,7 @@ Customer A spent $ 25 on 2 items.
 Customer B spent $40 on 2 items.
 */
 
---9. If each $1 spent equates to 10 points and sushi has a 2x points multiplier — how many points would each customer have?
+--9. If each $1 spent equates to 10 points and sushi has a 2x points multiplier â€” how many points would each customer have?
 
 SELECT customer_id,
 SUM(
@@ -296,7 +296,7 @@ GROUP BY customer_id
 
 /*
 Steps:
-Let’s breakdown the question.
+Letâ€™s breakdown the question.
 
 Each $1 spent = 10 points.
 But, sushi (product_id 1) gets 2x points, meaning each $1 spent = 20 points So, we use CASE WHEN to create conditional statements
@@ -305,9 +305,9 @@ All other product_id that is not 1, multiply $1 by 10 points Using price_points,
 
 Answer:
 customer_id	Total_Points
-A			860
-B			940
-C			360
+A		860
+B		940
+C		360
 
 Total points for Customer A is 860.
 Total points for Customer B is 940.
@@ -315,7 +315,7 @@ Total points for Customer C is 360.
 */
 
 -- 10. In the first week after a customer joins the program (including their join date) they earn 2x points on all items, not just sushi
---		— how many points do customer A and B have at the end of January?
+--		â€” how many points do customer A and B have at the end of January?
 
 SELECT
 	sales.customer_id,
