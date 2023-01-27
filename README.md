@@ -4,7 +4,7 @@
 ## 📚 Table of Contents
 - [Business Task](#business-task)
 - [Entity Relationship Diagram](#entity-relationship-diagram)
-- [Solution on Github]()
+- [Solution on Github](https://github.com/Arbaz-Baig/Dannys_Dinner/blob/main/Solution.sql)
 
 
 ***
