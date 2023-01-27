@@ -1,4 +1,4 @@
-# Danny's_Dinner
+## Case Study #1: Danny's Dinner
 Case Study #1 of 8 Week SQL Challenge
 
 This is part of the 8 week SQL Challenge, by Danny Ma:
